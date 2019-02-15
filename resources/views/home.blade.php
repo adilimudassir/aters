@@ -4,8 +4,8 @@
 <div class="container">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-        @if($user->code == 'collation')
-        <div class="alert alert-success">SOKOTO APC 2019 ELECTION DASHBOARD COLLATION CENTER</div>
+        @if($user->code == substr(md5('collation'),0, 8))
+        <div class="alert alert-success">SOKOTO <i class="fa fa-pied-piper-alt" aria-hidden="true"></i> 2019 ELECTION DASHBOARD COLLATION CENTER</div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -69,7 +69,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="card-body">
-                                            @php 
+                                            @php
                                                 $chart = new App\Charts\ResultChart;
                                                 $chart->labels(['APC', 'PDP', 'OTHERS',]);
                                                 $chart->dataset('Presidential Result', 'pie',[
@@ -130,7 +130,7 @@
                                 <div class="card">
                                     <div class="card-header h3"  style="color: white; background-color: seagreen" >{{$representative['name']}}</div>
                                     <div class="card-body">
-                                         @php 
+                                         @php
                                                 $chart = new App\Charts\ResultChart;
                                                 $chart->labels(['APC', 'PDP', 'OTHERS',]);
                                                 $chart->dataset('Presidential Result', 'pie',[
