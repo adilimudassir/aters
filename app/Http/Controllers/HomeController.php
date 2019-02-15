@@ -154,7 +154,20 @@ class HomeController extends Controller
 
     public function newResult(Request $request)
     {
-        return view('new_result',['id'=>$request->id]);
+        $pollingUnit = PollingUnit::find($request->id);
+
+        $presidential_result = Result::where('polling_unit_id',$pollingUnit->id)->where('type_id',1)->first();
+
+        $senatorial_result = Result::where('polling_unit_id',$pollingUnit->id)->where('type_id',2)->first();
+
+        $representative_result = Result::where('polling_unit_id',$pollingUnit->id)->where('type_id',3)->first();
+
+        return view('new_result',[
+            'id'=>$request->id,
+            'presidential' => $presidential_result,
+            'senatorial' => $senatorial_result,
+            'representative' => $representative_result
+        ]);
     }
     public function incidence(Request $request, Incidence $incidence)
     {

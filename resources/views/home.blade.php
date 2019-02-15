@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container p-10">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
         @if($user->code == substr(md5('collation'),0, 8))
-        <div class="alert alert-success">SOKOTO <i class="fa fa-pied-piper-alt" aria-hidden="true"></i> 2019 ELECTION DASHBOARD COLLATION CENTER</div>
+        <div class=" text-center">
+            <h1>{{ config('app.name') }} DASHBOARD COLLATION CENTER</h1>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h3"  style="color: white; background-color: seagreen">PRESIDENTIAL</div>
+                    <div class="card-header h1 bg-dark text-white">PRESIDENTIAL</div>
                     <div class="card-body">
                     @php
                         $presidentialChart = new App\Charts\ResultChart;
@@ -25,7 +27,7 @@
                         {!! $presidentialChart->container() !!}
                         {!! $presidentialChart->script() !!}
                     </div>
-                        <table class="table table->responsive">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -59,13 +61,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h3"  style="color: white; background-color: seagreen">SENATORIAL</div>
+                    <div class="card-header h1 bg-dark text-white">SENATORIAL</div>
                     <div class="card-body">
                         <div class="row">
-                            @foreach($senatorial as $senate)
+                            @foreach($senatorial as  $key => $senate)
                             <div class="">
                                 <div class="card">
-                                    <div class="card-header h3"  style="color: white; background-color: seagreen">{{$senate['name']}}</div>
+                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$senate['name']}}</div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="card-body">
@@ -84,7 +86,7 @@
                                                 {!! $chart->script() !!}
                                             </div>
                                         </div>
-                                        <table class="table table->responsive">
+                                        <table class="table table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
@@ -122,13 +124,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h3"  style="color: white; background-color: seagreen">REPRESENTATIVE</div>
+                    <div class="card-header h1 bg-dark text-white">REPRESENTATIVE</div>
                     <div class="card-body">
                         <div class="row">
-                            @foreach($representative as $representative)
+                            @foreach($representative as $key => $representative)
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header h3"  style="color: white; background-color: seagreen" >{{$representative['name']}}</div>
+                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$representative['name']}}</div>
                                     <div class="card-body">
                                          @php
                                                 $chart = new App\Charts\ResultChart;
@@ -144,7 +146,7 @@
                                                 {!! $chart->container() !!}
                                                 {!! $chart->script() !!}
                                             </div>
-                                        <table class="table table->responsive">
+                                        <table class="table table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
@@ -181,7 +183,9 @@
             </div>
         </div>
         @elseif($user->lga_id != null)
-        <div class="alert alert-success h3" >{{$user->lga->name.' Local Governement 2019 Election Report'}}</div>
+        <div class=" text-center">
+            <h1>{{$user->lga->name.' Local Government 2019 Election Report'}}</h1>
+        </div>
         <div class="row justify-content-center">
             @if(session('message'))
                 {{session('message')}}
@@ -212,10 +216,10 @@
             </div>
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h2" style="color: white; background-color: seagreen">{{'Summary'}}</div>
+                    <div class="card-header h1 bg-dark text-white">{{'Summary'}}</div>
                     <div class="card-body">
-                        <span class="h3" style="color: seagreen">Presidential</span>
-                        <table class="table table-default table-responsive">
+                        <span class="h3">Presidential</span>
+                        <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -251,8 +255,8 @@
 
                             </tbody>
                         </table>
-                        <span class="h3" style="color: white; background-color: seagreen">Senatorial</span>
-                        <table class="table table-default table-responsive">
+                        <span class="h3">Senatorial</span>
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -287,8 +291,8 @@
 
                             </tbody>
                         </table>
-                        <span class="h3" style="color: seagreen">Representative</span>
-                        <table class="table table-default table-responsive">
+                        <span class="h3">Representative</span>
+                        <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -325,20 +329,20 @@
                 </div>
             </div>
             @foreach($user->lga->wards as $ward)
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header h3"  style="background-color: seagreen;color:white">{{$ward->name.' Ward'}} {{count($ward->pollingUnits).' POLLING UNITS'}}</div>
+                        <div class="card-header h3 bg-dark text-white">{{$ward->name.' Ward'}} ({{count($ward->pollingUnits)}} POLLING UNITS )</div>
                         <div class="card-body">
                             <div class="row">
-                            @foreach($ward->pollingUnits as $pollingUnit)
+                            @foreach($ward->pollingUnits as $key => $pollingUnit)
                                 <div class="col-md-12">
                                     <div class="card">
-                                        <div class="card-header" style="background-color: seagreen; color: white">{{$pollingUnit->name. ' POLLING UNIT'}} {{'CODE '. $pollingUnit->user->code}}</div>
+                                        <div class="card-header h3 bg-secondary text-white"> {{ ++$key }} - {{$pollingUnit->name}}</div>
                                         <div class="card-body">
                                             @foreach($pollingUnit->results as $result)
                                             @if($result->type_id == 1)
-                                            <span class="h3" style="color: seagreen;">Presidential</span>
-                                            <table class="table table-responsive">
+                                            <span class="h3">Presidential</span>
+                                            <table class="table table-bordered table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -365,8 +369,8 @@
                                                 </tbody>
                                             </table>
                                             @elseif($result->type_id == 2)
-                                            <span class="h3" style="color: seagreen">Senatorial</span>
-                                            <table class="table table-responsive">
+                                            <span class="h3">Senatorial</span>
+                                            <table class="table table-bordered table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -393,8 +397,8 @@
                                                 </tbody>
                                             </table>
                                             @else
-                                            <span class="h3" style="color: seagreen">Representative</span>
-                                            <table class="table table-responsive">
+                                            <span class="h3">Representative</span>
+                                            <table class="table table-bordered table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -422,13 +426,12 @@
                                             </table>
                                             @endif
                                             @endforeach
-                                            @if($pollingUnit->submitted() == false)
                                             <form action="/add_result" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{$pollingUnit->id}}">
                                                 <input type="submit" class="btn btn-primary" value="Insert Result" >
                                             </form>
-                                            @endif
+                                            
                                         </div>
                                     </div>
                                 </div>
