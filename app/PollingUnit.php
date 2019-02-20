@@ -33,7 +33,7 @@ class PollingUnit extends Model
         $flag = true;
         foreach($this->results as $result){
             if($result->apc == 0){
-                $flag = false; 
+                $flag = false;
             }
         }
         return $flag;

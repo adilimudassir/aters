@@ -10,7 +10,7 @@ use App\Services\PollingUnit\PollingUnits;
 class Sokoto
 {
 
-	function __construct()
+	public function __construct()
 	{
 		$this->data = $this->localGovernments();
 	}
@@ -43,7 +43,7 @@ class Sokoto
 			['name'=>'Yabo','wards'=>$this->getPollingUnits('Yabo')]
 		];
 	}
-	
+
 	protected function getPollingUnits($lga)
 	{
 		$unit = new pollingUnits($lga);

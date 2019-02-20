@@ -1,33 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container p-10">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-
+<div class="container">
         @if($user->code == 'collation')
-        <div class=" text-center">
-            <h1>{{ config('app.name') }} DASHBOARD COLLATION CENTER</h1>
-        </div>
+        <div class="alert alert-success">SOKOTO APC 2019 ELECTION DASHBOARD COLLATION CENTER</div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h1 bg-dark text-white">PRESIDENTIAL</div>
+                    <div class="card-header h3"  style="color: white; background-color: seagreen">PRESIDENTIAL</div>
                     <div class="card-body">
-                    @php
-                        $presidentialChart = new App\Charts\ResultChart;
-                        $presidentialChart->labels(['APC', 'PDP', 'OTHERS',]);
-                        $presidentialChart->dataset('Presidential Result', 'pie',[
-                            $presidential['apc'],
-                            $presidential['pdp'],
-                            $presidential['other']
-                        ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
-                        ->fill(true);
-                    @endphp
-                    <div class="col md-12">
-                        {!! $presidentialChart->container() !!}
-                        {!! $presidentialChart->script() !!}
-                    </div>
-                        <table class="table table-bordered">
+                        <table class="table table->responsive">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -61,32 +43,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h1 bg-dark text-white">SENATORIAL</div>
+                    <div class="card-header h3"  style="color: white; background-color: seagreen">SENATORIAL</div>
                     <div class="card-body">
                         <div class="row">
-                            @foreach($senatorial as  $key => $senate)
-                            <div class="">
+                            @foreach($senatorial as $senate)
+                            <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$senate['name']}}</div>
+                                    <div class="card-header h3"  style="color: white; background-color: seagreen">{{$senate['name']}}</div>
                                     <div class="card-body">
-                                        <div class="row">
-                                            <div class="card-body">
-                                            @php
-                                                $chart = new App\Charts\ResultChart;
-                                                $chart->labels(['APC', 'PDP', 'OTHERS',]);
-                                                $chart->dataset('Presidential Result', 'pie',[
-                                                    $senate['result']['apc'],
-                                                    $senate['result']['pdp'],
-                                                    $senate['result']['other']
-                                                ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
-                                                ->fill(true);
-                                            @endphp
-                                            <div class="col md-12">
-                                                {!! $chart->container() !!}
-                                                {!! $chart->script() !!}
-                                            </div>
-                                        </div>
-                                        <table class="table table-bordered">
+                                        <table class="table table->responsive">
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
@@ -124,29 +89,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h1 bg-dark text-white">REPRESENTATIVE</div>
+                    <div class="card-header h3"  style="color: white; background-color: seagreen">REPRESENTATIVE</div>
                     <div class="card-body">
                         <div class="row">
-                            @foreach($representative as $key => $representative)
+                            @foreach($representative as $representative)
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$representative['name']}}</div>
+                                    <div class="card-header h3"  style="color: white; background-color: seagreen" >{{$representative['name']}}</div>
                                     <div class="card-body">
-                                         @php
-                                                $chart = new App\Charts\ResultChart;
-                                                $chart->labels(['APC', 'PDP', 'OTHERS',]);
-                                                $chart->dataset('Presidential Result', 'pie',[
-                                                    $representative['result']['apc'],
-                                                    $representative['result']['pdp'],
-                                                    $representative['result']['other']
-                                                ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
-                                                ->fill(true);
-                                            @endphp
-                                            <div class="col md-12">
-                                                {!! $chart->container() !!}
-                                                {!! $chart->script() !!}
-                                            </div>
-                                        <table class="table table-bordered">
+                                        <table class="table table->responsive">
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
@@ -184,7 +135,7 @@
         </div>
         @elseif($user->lga_id != null)
         <div class=" text-center">
-            <h1>{{$user->lga->name.' Local Government 2019 Election Report'}}</h1>
+            <h1>{{ $user->lga->name }} Local Government 2019 Election Report</h1>
         </div>
         <div class="row justify-content-center">
             @if(session('message'))
@@ -193,7 +144,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table>
+                        <table class="table table-bordered">
                             <tr>
                                 <td width="300">Local Government Name</td>
                                 <td>{{$user->lga->name}}</td>
@@ -216,9 +167,9 @@
             </div>
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header h1 bg-dark text-white">{{'Summary'}}</div>
+                    <div class="card-header h1 bg-dark text-white">Summary</div>
                     <div class="card-body">
-                        <span class="h3">Presidential</span>
+                        <span class="h3 text-dark">Presidential</span>
                         <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
@@ -255,8 +206,8 @@
 
                             </tbody>
                         </table>
-                        <span class="h3">Senatorial</span>
-                        <table class="table table-bordered">
+                        <span class="h3 text-dark">Senatorial</span>
+                        <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
@@ -291,7 +242,7 @@
 
                             </tbody>
                         </table>
-                        <span class="h3">Representative</span>
+                        <span class="h3 text-dark">Representative</span>
                         <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
@@ -331,18 +282,19 @@
             @foreach($user->lga->wards as $ward)
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header h3 bg-dark text-white">{{$ward->name.' Ward'}} ({{count($ward->pollingUnits)}} POLLING UNITS )</div>
+                        <div class="card-header h2 bg-dark text-white">{{$ward->name.' Ward'}} ( {{count($ward->pollingUnits)}} POLLING UNITS )</div>
                         <div class="card-body">
                             <div class="row">
                             @foreach($ward->pollingUnits as $key => $pollingUnit)
                                 <div class="col-md-12">
                                     <div class="card">
-                                        <div class="card-header h3 bg-secondary text-white"> {{ ++$key }} - {{$pollingUnit->name}}</div>
+                                        <div class="card-header h3 bg-secondary text-white">({{ ++$key }}) -  {{$pollingUnit->name}}, CODE {{$pollingUnit->user->code}}</div>
                                         <div class="card-body">
                                             @foreach($pollingUnit->results as $result)
                                             @if($result->type_id == 1)
                                             <span class="h3">Presidential</span>
-                                            <table class="table table-bordered table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -368,9 +320,11 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            </div>
                                             @elseif($result->type_id == 2)
                                             <span class="h3">Senatorial</span>
-                                            <table class="table table-bordered table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -396,9 +350,11 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            </div>
                                             @else
                                             <span class="h3">Representative</span>
-                                            <table class="table table-bordered table-responsive">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
@@ -424,14 +380,16 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            </div>
                                             @endif
                                             @endforeach
-                                            <form action="{{ route('new.result') }}" method="post">
+                                            @if($pollingUnit->submitted() == false)
+                                            <form action="/add_result" method="post">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{$pollingUnit->id}}">
                                                 <input type="submit" class="btn btn-primary" value="Insert Result" >
                                             </form>
-
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

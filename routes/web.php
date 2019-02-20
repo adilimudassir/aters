@@ -1,10 +1,10 @@
 <?php
+use App\Lga;
+use App\User;
+use App\Center;
 use App\Services\Sokoto;
 use App\Services\Register;
 use App\Services\CreateLocalGovernment;
-use App\Lga;
-use App\Center;
-use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +17,16 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
-Route::post('/accredited', 'HomeController@accredited');
-Route::post('/result', 'HomeController@result');
+Route::post('/accredited', 'HomeController@accredited')->name('acredited');
+Route::post('/result', 'HomeController@result')->name('result');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/add_result', 'HomeController@newResult');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contestants', 'HomeController@contestants')->name('contestants');
+Route::post('/add_result', 'HomeController@newResult')->name('new.result');
 Route::post('/incidence', 'HomeController@incidence');

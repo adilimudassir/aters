@@ -1,7 +1,8 @@
 @extends('layouts.app')
-
+@push('meta')
+<meta http-equiv="refresh" content="180">
 @section('content')
-<div class="container p-10">
+<div class="container-fluid p-10">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
         @if($user->code == 'collation')
@@ -15,12 +16,11 @@
                     <div class="card-body">
                     @php
                         $presidentialChart = new App\Charts\ResultChart;
-                        $presidentialChart->labels(['APC', 'PDP', 'OTHERS',]);
-                        $presidentialChart->dataset('Presidential Result', 'pie',[
+                        $presidentialChart->labels(['Muhammadu Buhari', 'Atiku Abubakar']);
+                        $presidentialChart->dataset('Presidential Result', 'bar',[
                             $presidential['apc'],
-                            $presidential['pdp'],
-                            $presidential['other']
-                        ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
+                            $presidential['pdp']
+                        ])->backgroundColor(['#6da252', '#00c0ef'])
                         ->fill(true);
                     @endphp
                     <div class="col md-12">
@@ -30,26 +30,19 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Registered Votes</th>
-                                    <th>Acredited</th>
-                                    <th>APC</th>
-                                    <th>PDP</th>
-                                    <th>Others</th>
-                                    <th>Valid Votes</th>
-                                    <th>Invalid Votes</th>
-                                    <th>Total Votes Cast</th>
+                                    <th>
+                                        Muhammadu Buhari <br>
+                                        (APC)
+                                    </th>
+                                    <th>
+                                        Atiku Abubakar <br>
+                                        (PDP)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{$presidential['registered'] == 0 ? 'Not Available' : $presidential['registered']}}</td>
-                                    <td>{{$presidential['acredited'] == 0 ? 'Not Available' : $presidential['acredited']}}</td>
                                     <td>{{$presidential['apc'] == 0 ? 'Not Available' : $presidential['apc']}}</td>
                                     <td>{{$presidential['pdp'] == 0 ? 'Not Available' : $presidential['pdp']}}</td>
-                                    <td>{{$presidential['other'] == 0 ? 'Not Available' : $presidential['other']}}</td>
-                                    <td>{{$presidential['other']+$presidential['apc']+$presidential['pdp'] == 0 ? 'Not Available' : $presidential['other']+$presidential['apc']+$presidential['pdp']}}</td>
-                                    <td>{{$presidential['invalid'] == 0 ? 'Not Available' : $presidential['invalid']}}</td>
-                                    <td>{{$presidential['invalid']+$presidential['other']+$presidential['apc']+$presidential['pdp'] == 0 ? 'Not Available' : $presidential['invalid']+$presidential['other']+$presidential['apc']+$presidential['pdp']}}</td>
 
                                 </tr>
                             </tbody>
@@ -62,65 +55,54 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header h1 bg-dark text-white">SENATORIAL</div>
-                    <div class="card-body">
-                        <div class="row">
-                            @foreach($senatorial as  $key => $senate)
-                            <div class="">
-                                <div class="card">
-                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$senate['name']}}</div>
-                                    <div class="card-body">
-                                        <div class="row">
+                        <div class="card-body">
+                            <div class="row">
+                                @foreach($senatorial as  $key => $senate)
+                                    <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">
+                                        <div class="card">
+                                            <div class="card-header bg-secondary text-white">{{ ++$key  }} - {{$senate['name']}}</div>
                                             <div class="card-body">
-                                            @php
-                                                $chart = new App\Charts\ResultChart;
-                                                $chart->labels(['APC', 'PDP', 'OTHERS',]);
-                                                $chart->dataset('Presidential Result', 'pie',[
-                                                    $senate['result']['apc'],
-                                                    $senate['result']['pdp'],
-                                                    $senate['result']['other']
-                                                ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
-                                                ->fill(true);
-                                            @endphp
-                                            <div class="col md-12">
-                                                {!! $chart->container() !!}
-                                                {!! $chart->script() !!}
+                                                <div class="">
+                                                        @php
+                                                            $chart = new App\Charts\ResultChart;
+                                                            $chart->labels([
+                                                                'APC',
+                                                                'PDP'
+                                                            ]);
+                                                            $chart->dataset('Senatorial Result', 'bar',[
+                                                                $senate['result']['apc'],
+                                                                $senate['result']['pdp'],
+                                                            ])->backgroundColor(['#6da252', '#00c0ef'])
+                                                            ->fill(true);
+                                                        @endphp
+
+                                                        {!! $chart->container() !!}
+                                                        {!! $chart->script() !!}
+                                                </div>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>{{ $senate['contestants']['apc'] }} <br>(APC)</th>
+                                                            <th>{{ $senate['contestants']['pdp'] }} <br>(PDP)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>{{$senate['result']['apc'] == 0 ? 'Not Available' : $senate['result']['apc']}}</td>
+                                                            <td>{{$senate['result']['pdp'] == 0 ? 'Not Available' : $senate['result']['pdp']}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>Registered Votes</th>
-                                                    <th>Acredited</th>
-                                                    <th>APC</th>
-                                                    <th>PDP</th>
-                                                    <th>Others</th>
-                                                    <th>Valid Votes</th>
-                                                    <th>Invalid Votes</th>
-                                                    <th>Total Votes Cast</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>{{$senate['result']['registered'] == 0 ? 'Not Available' : $senate['result']['registered']}}</td>
-                                                    <td>{{$senate['result']['acredited'] == 0 ? 'Not Available' : $senate['result']['acredited']}}</td>
-                                                    <td>{{$senate['result']['apc'] == 0 ? 'Not Available' : $senate['result']['apc']}}</td>
-                                                    <td>{{$senate['result']['pdp'] == 0 ? 'Not Available' : $senate['result']['pdp']}}</td>
-                                                    <td>{{$senate['result']['other'] == 0 ? 'Not Available' : $senate['result']['other']}}</td>
-                                                    <td>{{$senate['result']['apc']+$senate['result']['pdp']+$senate['result']['other'] == 0 ? 'Not Available' : $senate['result']['apc']+$senate['result']['pdp']+$senate['result']['other']}}</td>
-                                                    <td>{{$senate['result']['invalid'] == 0 ? 'Not Available' : $senate['result']['invalid']}}</td>
-                                                    <td>{{$senate['result']['invalid']+$senate['result']['apc']+$senate['result']['pdp']+$senate['result']['other'] == 0 ? 'Not Available' : $senate['result']['invalid']+$senate['result']['apc']+$senate['result']['pdp']+$senate['result']['other']}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-        </div><br>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -128,47 +110,45 @@
                     <div class="card-body">
                         <div class="row">
                             @foreach($representative as $key => $representative)
-                            <div class="col-md-12">
+                            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-2">
                                 <div class="card">
-                                    <div class="card-header h3 bg-secondary text-white">{{ ++$key  }} - {{$representative['name']}}</div>
+                                    <div class="card-header bg-secondary text-white">
+                                        {{ ++$key  }} - {{$representative['name']}}
+                                    </div>
                                     <div class="card-body">
-                                         @php
-                                                $chart = new App\Charts\ResultChart;
-                                                $chart->labels(['APC', 'PDP', 'OTHERS',]);
-                                                $chart->dataset('Presidential Result', 'pie',[
-                                                    $representative['result']['apc'],
-                                                    $representative['result']['pdp'],
-                                                    $representative['result']['other']
-                                                ])->backgroundColor(['#6da252', '#00c0ef', '#F56954'])
-                                                ->fill(true);
-                                            @endphp
-                                            <div class="col md-12">
-                                                {!! $chart->container() !!}
-                                                {!! $chart->script() !!}
-                                            </div>
+                                        @php
+                                            $chart = new App\Charts\ResultChart;
+                                            $chart->labels([
+                                                'APC',
+                                                'PDP'
+                                            ]);
+                                            $chart->dataset('Representative Result', 'bar',[
+                                                $representative['result']['apc'],
+                                                $representative['result']['pdp'],
+                                            ])->backgroundColor(['#6da252', '#00c0ef'])
+                                            ->fill(true);
+                                        @endphp
+                                        <div class="">
+                                            {!! $chart->container() !!}
+                                            {!! $chart->script() !!}
+                                        </div>
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>Registered Votes</th>
-                                                    <th>Acredited</th>
-                                                    <th>APC</th>
-                                                    <th>PDP</th>
-                                                    <th>Others</th>
-                                                    <th>Valid Votes</th>
-                                                    <th>Invalid Votes</th>
-                                                    <th>Total Votes Cast</th>
+                                                    <th>
+                                                        {{$representative['contestants']['apc']}}
+                                                        <br>(APC)
+                                                    </th>
+                                                    <th>
+                                                        {{$representative['contestants']['pdp']}}
+                                                        <br>(PDP)
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>{{$representative['result']['registered'] == 0 ? 'Not Available' : $representative['result']['registered']}}</td>
-                                                    <td>{{$representative['result']['acredited'] == 0 ? 'Not Available' : $representative['result']['acredited']}}</td>
                                                     <td>{{$representative['result']['apc'] == 0 ? 'Not Available' : $representative['result']['apc']}}</td>
                                                     <td>{{$representative['result']['pdp'] == 0 ? 'Not Available' : $representative['result']['pdp']}}</td>
-                                                    <td>{{$representative['result']['other'] == 0 ? 'Not Available' : $representative['result']['other']}}</td>
-                                                    <td>{{$representative['result']['apc']+$representative['result']['pdp']+$representative['result']['other'] == 0 ? 'Not Available' : $representative['result']['apc']+$representative['result']['pdp']+$representative['result']['other']}}</td>
-                                                    <td>{{$representative['result']['invalid'] == 0 ? 'Not Available' : $representative['result']['invalid']}}</td>
-                                                    <td>{{$representative['result']['invalid']+$representative['result']['apc']+$representative['result']['pdp']+$representative['result']['other'] == 0 ? 'Not Available' : $representative['result']['invalid']+$representative['result']['apc']+$representative['result']['pdp']+$representative['result']['other']}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -176,7 +156,6 @@
                                 </div>
                             </div>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -515,4 +494,7 @@
         </div>
         @endif
 </div>
+<script>
+
+</script>
 @endsection

@@ -26,9 +26,9 @@ class ElectionFormRequest extends FormRequest
         $input = [];
 
         if($this->has('acredited')){
-            $input['acredited'] = 'required|integer';
+            $input['acredited'] = 'required|integer|min:0|max:900';
         }else{
-            $input['registered'] = 'required|integer';
+            $input['registered'] = 'required|integer|min:0|max:900';
         }
         return $input;
     }
