@@ -173,8 +173,8 @@ class HomeController extends Controller
             $pollingUnit = PollingUnit::find($request->id);
 
             $pollingUnit->update([
-                'acredited' => $request->acredited,
-                'registered' => $request->registered
+                'acredited' => $request->acredited ?? 0,
+                'registered' => $request->registered ?? 0
             ]);
         } else {
             $pollingUnit = auth()->User()->pollingUnit;

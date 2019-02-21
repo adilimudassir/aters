@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 use App\Services\Summary as ElectionResultSummary;
-class Lga extends Model
+
+class Lga extends BaseModel
 {
     use ElectionResultSummary;
 

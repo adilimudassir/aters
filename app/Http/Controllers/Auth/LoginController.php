@@ -30,7 +30,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        $request['email'] = $request->key.'@apc.com';
+        $request['email'] = $request->key.'@pdp.com';
         $request['password'] = $request->key;
         $this->validateLogin($request);
 

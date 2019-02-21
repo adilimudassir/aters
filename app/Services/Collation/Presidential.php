@@ -25,7 +25,7 @@ class Presidential
 		for ($i=1; $i <= 23; $i++) {
 
             $lga = Lga::find($i);
-			$lga_result = dd($lga->result());
+			$lga_result = $lga->result();
             $pdp = $pdp + $lga_result['presidential']['pdp'];
             $apc = $apc + $lga_result['presidential']['apc'];
             $other = $other + $lga_result['presidential']['other'];

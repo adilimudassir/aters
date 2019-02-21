@@ -30,7 +30,7 @@ class Register
 			$userCenter = Center::firstOrCreate(['name'=>$center]);
 			$code = substr(md5($userCenter->id), 0, 8);
 			$userCenter->user()->create([
-                'email'=>$code.'@apc.com',
+                'email'=>$code.'@pdp.com',
 				'code'=>$code,
 				'password'=>Hash::make($code)
 			]);
@@ -38,7 +38,7 @@ class Register
 
 		$code = substr(md5('collation'),0, 8);
 		User::create([
-            'email'=>'collation'.'@apc.com',
+            'email'=>'collation'.'@pdp.com',
 			'code'=>'collation',
 			'password'=>Hash::make('collation'),
 
@@ -58,7 +58,7 @@ class Register
 				//create the user if the local government
 				$code = $this->localCode($local->id);
 				$local->user()->create([
-		            'email'=>$code.'@apc.com',
+		            'email'=>$code.'@pdp.com',
 					'code'=>$code,
 					'password'=>Hash::make($code),
 				]);
@@ -84,7 +84,7 @@ class Register
 
 								//create agent of the polling unit
 								$agent->user()->create([
-                                    'email'=>'a'.$this->agentCode($agent->id).'@apc.com',
+                                    'email'=>'a'.$this->agentCode($agent->id).'@pdp.com',
 									'code'=>'a'.$this->agentCode($agent->id),
 									'password'=>Hash::make('a'.$this->agentCode($agent->id)),
 

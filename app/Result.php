@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 
-class Result extends Model
+class Result extends BaseModel
 {
     protected $guarded = [];
 

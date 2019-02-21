@@ -14,20 +14,20 @@
                         <fieldset>
                             <legend>POLLING UNIT INFORMATION</legend>
                            <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="usr">Registered Votes:</label>
                                     <input class="form-control" type="number" min="0" max="900" value="0" name="registered"
                                         placeholder="REGISTERED VOTES">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            {{-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="Acredited">Acredited Votes</label>
-                                    <input class="form-control" type="number" min="0" max="900" value="0" name="acredited"
+                                    <input class="form-control" disabled type="number" min="0" max="900" value="0" name="acredited"
                                         placeholder="ACREDITED VOTES">
                                 </div>
-                            </div>
+                            </div> --}}
                            </div>
                         </fieldset>
                         <fieldset>

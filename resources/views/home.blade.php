@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container p-10">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
 
         @if($user->code == 'collation')
         <div class=" text-center">
@@ -31,19 +31,19 @@
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
-                                    <th>Acredited</th>
+                                    <!-- <th>Acredited</th> -->
                                     <th>APC</th>
                                     <th>PDP</th>
                                     <th>Others</th>
-                                    <th>Valid Votes</th>
-                                    <th>Invalid Votes</th>
+                                    <th>Valid</th>
+                                    <th>Invalid</th>
                                     <th>Total Votes Cast</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>{{$presidential['registered'] == 0 ? 'Not Available' : $presidential['registered']}}</td>
-                                    <td>{{$presidential['acredited'] == 0 ? 'Not Available' : $presidential['acredited']}}</td>
+                                    {{-- <td>{{$presidential['acredited'] == 0 ? 'Not Available' : $presidential['acredited']}}</td> --}}
                                     <td>{{$presidential['apc'] == 0 ? 'Not Available' : $presidential['apc']}}</td>
                                     <td>{{$presidential['pdp'] == 0 ? 'Not Available' : $presidential['pdp']}}</td>
                                     <td>{{$presidential['other'] == 0 ? 'Not Available' : $presidential['other']}}</td>
@@ -90,19 +90,19 @@
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
-                                                    <th>Acredited</th>
+                                                    <!-- <th>Acredited</th> -->
                                                     <th>APC</th>
                                                     <th>PDP</th>
                                                     <th>Others</th>
-                                                    <th>Valid Votes</th>
-                                                    <th>Invalid Votes</th>
+                                                    <th>Valid</th>
+                                                    <th>Invalid</th>
                                                     <th>Total Votes Cast</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>{{$senate['result']['registered'] == 0 ? 'Not Available' : $senate['result']['registered']}}</td>
-                                                    <td>{{$senate['result']['acredited'] == 0 ? 'Not Available' : $senate['result']['acredited']}}</td>
+                                                   {{-- <td>{{$senate['result']['acredited'] == 0 ? 'Not Available' : $senate['result']['acredited']}}</td> --}}
                                                     <td>{{$senate['result']['apc'] == 0 ? 'Not Available' : $senate['result']['apc']}}</td>
                                                     <td>{{$senate['result']['pdp'] == 0 ? 'Not Available' : $senate['result']['pdp']}}</td>
                                                     <td>{{$senate['result']['other'] == 0 ? 'Not Available' : $senate['result']['other']}}</td>
@@ -150,19 +150,19 @@
                                             <thead>
                                                 <tr>
                                                     <th>Registered Votes</th>
-                                                    <th>Acredited</th>
+                                                    <!-- <th>Acredited</th> -->
                                                     <th>APC</th>
                                                     <th>PDP</th>
                                                     <th>Others</th>
-                                                    <th>Valid Votes</th>
-                                                    <th>Invalid Votes</th>
+                                                    <th>Valid</th>
+                                                    <th>Invalid</th>
                                                     <th>Total Votes Cast</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>{{$representative['result']['registered'] == 0 ? 'Not Available' : $representative['result']['registered']}}</td>
-                                                    <td>{{$representative['result']['acredited'] == 0 ? 'Not Available' : $representative['result']['acredited']}}</td>
+                                                    {{--<td>{{$representative['result']['acredited'] == 0 ? 'Not Available' : $representative['result']['acredited']}}</td> --}}
                                                     <td>{{$representative['result']['apc'] == 0 ? 'Not Available' : $representative['result']['apc']}}</td>
                                                     <td>{{$representative['result']['pdp'] == 0 ? 'Not Available' : $representative['result']['pdp']}}</td>
                                                     <td>{{$representative['result']['other'] == 0 ? 'Not Available' : $representative['result']['other']}}</td>
@@ -223,12 +223,12 @@
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
-                                    <th>Acredited</th>
+                                    <!-- <th>Acredited</th> -->
                                     <th>APC</th>
                                     <th>PDP</th>
                                     <th>Others</th>
-                                    <th>Valid Votes</th>
-                                    <th>Invalid Votes</th>
+                                    <th>Valid</th>
+                                    <th>Invalid</th>
                                     <th>Total Votes Cast</th>
                                 </tr>
                             </thead>
@@ -236,7 +236,7 @@
                                 <tr>
                                     <td>{{$summary['registered'] == 0 ? 'Not Avalable' : $summary['registered']}}</td>
 
-                                    <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td>
+                                    {{-- <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td> --}}
 
                                     <td>{{$user->lga->result()['presidential']['apc'] == 0 ? 'Not Available' : $user->lga->result()['presidential']['apc']}}</td>
 
@@ -256,16 +256,16 @@
                             </tbody>
                         </table>
                         <span class="h3">Senatorial</span>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-responsive">
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
-                                    <th>Acredited</th>
+                                    {{-- <th>Acredited</th> --}}
                                     <th>APC</th>
                                     <th>PDP</th>
                                     <th>Others</th>
-                                    <th>Valid Votes</th>
-                                    <th>Invalid Votes</th>
+                                    <th>Valid</th>
+                                    <th>Invalid</th>
                                     <th>Total Votes Cast</th>
                                 </tr>
                             </thead>
@@ -273,7 +273,7 @@
                                 <tr>
                                     <td>{{$summary['registered'] == 0 ? 'Not Avalable' : $summary['registered']}}</td>
 
-                                    <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td>
+                                    {{-- <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td> --}}
 
                                     <td>{{$user->lga->result()['senatorial']['apc'] == 0 ? 'Not Available' : $user->lga->result()['senatorial']['apc']}}</td>
 
@@ -296,12 +296,12 @@
                             <thead>
                                 <tr>
                                     <th>Registered Votes</th>
-                                    <th>Acredited</th>
+                                    <!-- <th>Acredited</th> -->
                                     <th>APC</th>
                                     <th>PDP</th>
                                     <th>Others</th>
-                                    <th>Valid Votes</th>
-                                    <th>Invalid Votes</th>
+                                    <th>Valid</th>
+                                    <th>Invalid</th>
                                     <th>Total Votes Cast</th>
                                 </tr>
                             </thead>
@@ -309,7 +309,7 @@
                                 <tr>
                                     <td>{{$summary['registered'] == 0 ? 'Not Avalable' : $summary['registered']}}</td>
 
-                                    <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td>
+                                    {{-- <td>{{$summary['acredited'] == 0 ? 'Not Avalable' : $summary['acredited']}}</td> --}}
 
                                     <td>{{$user->lga->result()['representative']['apc'] == 0 ? 'Not Available' : $user->lga->result()['representative']['apc']}}</td>
 
@@ -346,19 +346,19 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
-                                                        <th>Accredited</th>
+                                                        <!-- <th>Accredited</th> -->
                                                         <th>APC</th>
                                                         <th>PDP</th>
                                                         <th>Others</th>
-                                                        <th>Valid Votes</th>
-                                                        <th>Invalid Votes</th>
+                                                        <th>Valid</th>
+                                                        <th>Invalid</th>
                                                         <th>Total Votes Cast</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>{{$pollingUnit->registered == 0 ? 'Not Available' : $pollingUnit->registered}}</td>
-                                                        <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td>
+                                                        {{-- <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td> --}}
                                                         <td>{{$result->apc == 0 ? 'Not Available' : $result->apc}}</td>
                                                         <td>{{$result->pdp == 0 ? 'Not Available' : $result->pdp}}</td>
                                                         <td>{{$result->other == 0 ? 'Not Available' : $result->other}}</td>
@@ -374,7 +374,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
-                                                        <th>Accredited</th>
+                                                        <!-- <th>Accredited</th> -->
                                                         <th>APC</th>
                                                         <th>PDP</th>
                                                         <th>Others</th>
@@ -386,7 +386,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>{{$pollingUnit->registered == 0 ? 'Not Available' : $pollingUnit->registered}}</td>
-                                                        <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td>
+                                                        {{-- <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td> --}}
                                                         <td>{{$result->apc == 0 ? 'Not Available' : $result->apc}}</td>
                                                         <td>{{$result->pdp == 0 ? 'Not Available' : $result->pdp}}</td>
                                                         <td>{{$result->other == 0 ? 'Not Available' : $result->other}}</td>
@@ -402,7 +402,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Registered Votes</th>
-                                                        <th>Accredited</th>
+                                                        <!-- <th>Accredited</th> -->
                                                         <th>APC</th>
                                                         <th>PDP</th>
                                                         <th>Others</th>
@@ -414,7 +414,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>{{$pollingUnit->registered == 0 ? 'Not Available' : $pollingUnit->registered}}</td>
-                                                        <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td>
+                                                {{--        <td>{{$pollingUnit->acredited == 0 ? 'Not Available' : $pollingUnit->acredited}}</td> --}}
                                                         <td>{{$result->apc == 0 ? 'Not Available' : $result->apc}}</td>
                                                         <td>{{$result->pdp == 0 ? 'Not Available' : $result->pdp}}</td>
                                                         <td>{{$result->other == 0 ? 'Not Available' : $result->other}}</td>

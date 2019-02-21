@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 
-class PollingUnit extends Model
+class PollingUnit extends BaseModel
 {
     protected $guarded = [];
 

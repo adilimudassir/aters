@@ -3,7 +3,7 @@
 <meta http-equiv="refresh" content="180">
 @section('content')
 <div class="container-fluid p-10">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
 
         @if($user->code == 'collation')
         <div class=" text-center">
@@ -489,7 +489,7 @@
             </div>
             @include('incidence')
             @else
-                <div class="alert alert-success h4" >{{'Thanks for using our Applictaion in 2019 '}}</div>
+                <div class="alert alert-success h4" >{{'Thanks for using our Application in 2019 '}}</div>
             @endif
         </div>
         @endif
