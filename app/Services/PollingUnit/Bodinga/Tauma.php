@@ -1,9 +1,9 @@
 <?php
 namespace App\Services\PollingUnit\Bodinga;
-	
+
 	class Tauma
 	{
-		
+
 		function __construct()
 		{
 			# code...
