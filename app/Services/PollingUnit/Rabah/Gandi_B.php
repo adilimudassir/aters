@@ -12,14 +12,14 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'DANKARMAWA',
-				'DANGAZRI ‐ M.P.S',
-				'CHAKALTU PRIMARY SCHOOL (CHAKALTU)',
-				'ALLIKIRU',
-				'KURSA ‐ KRUSA',
-				'BURWANGA ‐ BURWANGA',
-				'TABANNI ‐ TABANNI',
-				'DANKARMAWA ‐ M.P.S'
+				['DANKARMAWA',465],
+				['DANGAZRI ‐ M.P.S',814],
+				['CHAKALTU, CHAKALTU',298],
+				['ALLIKIRU',473],
+				['KURSA ‐ KRUSA',243],
+				['BURWANGA ‐ BURWANGA',174],
+				['TABANNI ‐ TABANNI',269],
+				['DANKARMAWA ‐ M.P.S',457]
 			];
 		}
 	}

@@ -12,13 +12,13 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'SHIYAR AJIYA',
-				'SHIYAR RAFI',
-				'SHIYAR MAGAJI',
-				'SHIYAR DANHAJO J.N.I. (SHIYAR DANHAJO)',
-				'SHIYAR KAIWAR DAWA',
-				'SHIYAR ELAWO',
-				'KWATTE‐MAGAJI‐KWATTEM AGAJI / SHIYAR KWATE MAGAJI'
+				['SHIYAR AJIYA',749],
+				['SHIYAR RAFI',679],
+				['SHIYAR MAGAJI',493],
+				['SHIYAR DAN HAJO',716],
+				['SHIYAR KAIWAR DAWA',355],
+				['SHIYAR ELAWO',365],
+				['KWATTE‐MAGAJI‐KWATTEM AGAJI / SHIYAR KWATE MAGAJI',209]
 			];
 		}
 	}

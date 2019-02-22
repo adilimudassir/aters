@@ -7,7 +7,7 @@ use App\Lga;
 
 class Presidential
 {
-	
+
 	function __construct()
 	{
 		$this->result = $this->result();

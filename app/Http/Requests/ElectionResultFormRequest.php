@@ -24,23 +24,20 @@ class ElectionResultFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'senatorial_apc' => 'required|integer',
-            'senatorial_pdp' => 'required|integer',
-            'senatorial_other' => 'required|integer',
-            'senatorial_valid_vote' => 'required|integer',
-            'senatorial_invalid_vote' => 'required|integer',
+            'senatorial_apc' => 'required|digits_between:0,900|integer',
+            'senatorial_pdp' => 'required|digits_between:0,900|integer',
+            'senatorial_other' => 'required|digits_between:0,900|integer',
+            'senatorial_invalid_vote' => 'required|digits_between:0,900|integer',
 
-            'presidential_apc' => 'required|integer',
-            'presidential_pdp' => 'required|integer',
-            'presidential_other' => 'required|integer',
-            'presidential_valid_vote' => 'required|integer',
-            'presidential_invalid_vote' => 'required|integer',
+            'presidential_apc' => 'required|digits_between:0,900|integer',
+            'presidential_pdp' => 'required|digits_between:0,900|integer',
+            'presidential_other' => 'required|digits_between:0,900|integer',
+            'presidential_invalid_vote' => 'required|digits_between:0,900|integer',
 
-            'representative_apc' => 'required|integer',
-            'representative_pdp' => 'required|integer',
-            'representative_other' => 'required|integer',
-            'representative_valid_vote' => 'required|integer',
-            'representative_invalid_vote' => 'required|integer'
+            'representative_apc' => 'required|digits_between:0,900|integer',
+            'representative_pdp' => 'required|digits_between:0,900|integer',
+            'representative_other' => 'required|digits_between:0,900|integer',
+            'representative_invalid_vote' => 'required|digits_between:0,900|integer'
         ];
     }
 }

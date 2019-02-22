@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -16,7 +16,7 @@ class LoginController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
+    | redirecting them to your  screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
     */
@@ -30,8 +30,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-       
-        $request['email'] = $request->key.'@apc.com';
+        $request['email'] = $request->key.'@pdp.com';
         $request['password'] = $request->key;
         $this->validateLogin($request);
 
@@ -55,7 +54,7 @@ class LoginController extends Controller
 
         return $this->sendFailedLoginResponse($request);
     }
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

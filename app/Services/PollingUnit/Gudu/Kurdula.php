@@ -12,16 +12,16 @@ namespace App\Services\PollingUnit\Gudu;
 
 		public function pollingUnits(){
 			return [
-				'PRY SCH, KURDULA',
-				'SHIYAR DAMBO',
-				'ADARAWA, ZABARMAWA',
-				'KURUNKUSITI/BUNYA',
-				'DARUSA GAWO',
-				'DARUSA MUSA',
-				'DARUSA SAMNA',
-				'KATSURA, KATSURA',
-				'DABAGA, DABAGA',
-				'ADARAWA ZABARMAWA DANFILI'
+				['PRY SCH, KURDULA',936],
+				['SHIYAR DAMBO',862],
+				['ADARAWA, ZABARMAWA',800],
+				['KURUNKUSITI/BUNYA',517],
+				['DARUSA GAWO',995],
+				['DARUSA MUSA',634],
+				['DARUSA SAMNA',569],
+				['KATSURA, KATSURA',1361],
+				['DABAGA, DABAGA',126],
+				['ADARAWA ZABARMAWA DANFILI',662]
 			];
 		}
 	}

@@ -2,12 +2,13 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 
-class Incidence extends Model
+class Incidence extends BaseModel
 {
 	protected $guarded = [];
-	
+
     public function pollingUnitIncidence()
     {
     	return $this->BelongsTo('App\PollingUnitIncidence');

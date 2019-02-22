@@ -15,19 +15,19 @@ class Kalgo
 	protected function pollingUnits()
 	{
 		return [
-			'KALGO I MPS',
-			'KALGO PRI.SEC (KALGO II DANFILI)',
-			'SARDAUNA GABAS MPS',
-			'PRI‐SCH (SARDAUNA YAMMA MASALLACI)',
-			'TEKE MAIFULOTI',
-			'DANGARI ‐ DANGARI',
-			'ADAMAWA',
-			'DUKKUMA',
-			'TASHAR BAGARUWA',
-			'GIDAN AUTA',
-			'KUKA ‐ KUKA',
-			'DANKARMAWA',
-			'TSAURAWA'
+			['KALGO I MPS', 512],
+			['KALGO II DANFILI', 600],
+			['SARDAUNA GABAS MPS', 470],
+			['SARDAUNA YAMMA MASALLACI', 321],
+			['TEKE MAIFULOTI', 771],
+			['DANGARI ‐ DANGARI', 466],
+			['ADAMAWA', 649],
+			['DUKKUMA', 407],
+			['TASHAR BAGARUWA', 555],
+			['GIDAN AUTA', 648],
+			['KUKA ‐ KUKA', 554],
+			['DANKARMAWA', 856],
+			['TSAURAWA', 409]
 		];
 	}
 }

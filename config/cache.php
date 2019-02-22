@@ -75,6 +75,11 @@ return [
             'connection' => 'cache',
         ],
 
+        'model-caching' => [
+            'driver' => 'redis',
+            'connection' => 'model-cache',
+        ],
+
     ],
 
     /*

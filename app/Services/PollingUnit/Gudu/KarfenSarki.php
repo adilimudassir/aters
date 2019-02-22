@@ -12,13 +12,13 @@ namespace App\Services\PollingUnit\Gudu;
 
 		public function pollingUnits(){
 			return [
-				'ASIBITIN GARI, KARFEN SARKI',
-				'TOWN PRY SCH, KARFEN SARKI',
-				'DAN FILI, FILASKO',
-				'DAN FILI, HUDAR MARKE',
-				'DAN FILI, TAURA MATA',
-				'KARFEN SARKI DAN FILI KARFEN SARKI',
-				'FILASKO‐DAN FILI'
+				['ASIBITIN GARI, KARFEN SARKI',573]
+				['TOWN PRY SCH, KARFEN SARKI',573],
+				['DAN FILI, FILASKO',344],
+				['DAN FILI, HUDAR MARKE',394],
+				['DAN FILI, TAURA MATA',614],
+				['KARFEN SARKI DAN FILI KARFEN SARKI',479],
+				['FILASKO‐DAN FILI',318]
 			];
 		}
 	}

@@ -2,9 +2,10 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 
-class PollingUnit extends Model
+class PollingUnit extends BaseModel
 {
     protected $guarded = [];
 
@@ -33,7 +34,7 @@ class PollingUnit extends Model
         $flag = true;
         foreach($this->results as $result){
             if($result->apc == 0){
-                $flag = false; 
+                $flag = false;
             }
         }
         return $flag;

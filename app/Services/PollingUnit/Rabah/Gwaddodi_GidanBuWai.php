@@ -12,13 +12,13 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'PRIMARY SCHOOL (SHIYAR HAKIMI)',
-				'PRIMARY SCHOOL (SHIYAR BAZAI)',
-				'PRIMARY SCHOOL (SHIYAR MAGAJI)',
-				'MPS GWADDODI (SHIYAR YARI)',
-				'PRIMARY SCHOOL (SHIYAR BANGO)',
-				'ANGAMBA PRY SCHOOL (ANGAMBA)',
-				'DANDALO PRY. SCHOOL (DANDALO)'
+				['SHIYAR HAKIMI',682],
+				['SHIYAR BAZAI',650],
+				['SHIYAR MAGAJI',709],
+				['SHIYAR YARI',773],
+				['SHIYAR BANGO',790],
+				['ANGAMBA',711],
+				['DAN DALO',316]
 			];
 		}
 	}

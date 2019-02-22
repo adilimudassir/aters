@@ -12,17 +12,17 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'SHIYAR UBANDAWAKI',
-				'SHIYAR AJIYA MPS (SHIYAR AJIYA)',
-				'J.S.S. SABON GARI (SABON GARI)',
-				'SABON GARI ‐ M.P.S II',
-				'BADAMMA',
-				'TSAMAWA PRIMARY SCHOOL (TSAMAWA)',
-				'SANGIWA M.P.S',
-				'JIGARA',
-				'RAHAH ‐ RAHAH',
-				'DANBANDA',
-				'SIDINGO ‐ SIDINGO'
+				['SHIYAR UBANDAWAKI',701],
+				['SHIYAR AJIYA',627],
+				['SABON GARI SABON GARI I',846],
+				['SABON GARI ‐ M.P.S II',799],
+				['BADAMMA',652],
+				['TSAMAWA',692],
+				['SANGIWA M.P.S',458],
+				['JIGARA',256],
+				['RAHAH ‐ RAHAH',383],
+				['DANBANDA',535],
+				['SIDINGO ‐ SIDINGO',251]
 			];
 		}
 	}

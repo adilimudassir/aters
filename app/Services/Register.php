@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class Register
 {
-	
+
 	function __construct($data)
 	{
 		$this->data = $data;
@@ -30,7 +30,7 @@ class Register
 			$userCenter = Center::firstOrCreate(['name'=>$center]);
 			$code = substr(md5($userCenter->id), 0, 8);
 			$userCenter->user()->create([
-                'email'=>$code.'@apc.com',
+                'email'=>$code.'@pdp.com',
 				'code'=>$code,
 				'password'=>Hash::make($code)
 			]);
@@ -38,27 +38,27 @@ class Register
 
 		$code = substr(md5('collation'),0, 8);
 		User::create([
-            'email'=>$code.'@apc.com',
-			'code'=>$code,
-			'password'=>Hash::make($code),
-			
+            'email'=>'collation'.'@pdp.com',
+			'code'=>'collation',
+			'password'=>Hash::make('collation'),
+
 		]);
 
-		$type = ['Presidential','Sentorial','Representative'];
+		$type = ['Presidential','Senatorial','Representative'];
         foreach ($type as $name) {
         	Type::create(['name'=>$name]);
         }
 		foreach ($this->data as $data) {
 
 			foreach ($data as $lga) {
-               
+
 				//create local government
 				$local = Lga::create(['name'=>$lga['name']]);
 
 				//create the user if the local government
-				$code = substr(md5($local->id.'l'),0, 8);
+				$code = $this->localCode($local->id);
 				$local->user()->create([
-		            'email'=>$code.'@apc.com',
+		            'email'=>$code.'@pdp.com',
 					'code'=>$code,
 					'password'=>Hash::make($code),
 				]);
@@ -71,23 +71,23 @@ class Register
                         $this_ward = Ward::create(['name'=>$ward['name'],'lga_id'=>$local->id]);
 
 						foreach ($ward['pollingUnits'] as $pollingUnits) {
-                            
+
 							foreach ($pollingUnits as $pollingUnit) {
-                                
-                                //create polling unit 
+
+                                //create polling unit
 								$agent = $this_ward->pollingUnits()->create(['name'=>$pollingUnit,'ward_id'=>$this_ward->id]);
 								// create polling unit result with zero values
-								for ($i=1; $i <= 3 ; $i++) { 
+								for ($i=1; $i <= 3 ; $i++) {
 									Result::create(['type_id'=>$i,'polling_unit_id'=>$agent->id]);
 								}
-                                
-                         
+
+
 								//create agent of the polling unit
 								$agent->user()->create([
-                                    'email'=>'a'.$this->agentCode($agent->id).'@apc.com',
+                                    'email'=>'a'.$this->agentCode($agent->id).'@pdp.com',
 									'code'=>'a'.$this->agentCode($agent->id),
 									'password'=>Hash::make('a'.$this->agentCode($agent->id)),
-		
+
 								]);
 							}
 
@@ -113,7 +113,7 @@ class Register
 			case '3':
 				$code = '0'.$code;
 				break;
-			
+
 			default:
 				$code = $code;
 				break;

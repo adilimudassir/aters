@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 .env
+~$SOKOTO.xlsx
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

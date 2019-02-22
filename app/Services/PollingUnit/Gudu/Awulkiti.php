@@ -12,11 +12,11 @@ namespace App\Services\PollingUnit\Gudu;
 
 		public function pollingUnits(){
 			return [
-				'DANFILI AWULKITI MAIGARI',
-				'KUKOKIN RAFI',
-				'RAFIN KALGO',
-				'HUS',
-				'DANFILI AWULKITI PRY SCH'
+				['DANFILI AWULKITI MAIGARI',528],
+				['KUKOKIN RAFI',476],
+				['RAFIN KALGO',519],
+				['HUS',403],
+				['DANFILI AWULKITI PRY SCH',742]
 			];
 		}
 	}
