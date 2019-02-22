@@ -14,16 +14,16 @@ class Gangam
 	protected function pollingUnits()
 	{
 		return [
-			'GAMGAM ‐ MODEL PRI.SCHOOL',
-			'GAMGAM ‐ BADI',
-			'RUGGAR BUDA MPS (RUGGAR BUDA)',
-			'TAKALMAWA/TAKALMAWA',
-			'LUNGU',
-			'TUNGAR BARKI',
-			'ASKE DODO',
-			'BANGA HURDU',
-			'YANDUN DAJI',
-			'LOKOKA'
+			['GAMGAM ‐ MODEL PRI.SCHOOL',948],
+			['GAMGAM ‐ BADI',738],
+			['RUGGAR BUDA MPS (RUGGAR BUDA)',539],
+			['TAKALMAWA/TAKALMAWA',532],
+			['LUNGU',619],
+			['TUNGAR BARKI',615],
+			['ASKE DODO',429],
+			['BANGA HURDU',373],
+			['YANDUN DAJI',171],
+			['LOKOKA',318]
 		];
 	}
 }

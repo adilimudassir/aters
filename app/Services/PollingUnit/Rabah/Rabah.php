@@ -12,17 +12,17 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'SHIYAR MAJIKIRA ‐ A. RABAH',
-				'SHIYAR MAJIKIRA ‐ B. RABAH',
-				'RABAH LIBRARY (SHIYAR GALADIMA)',
-				'SHIYAR RAFI ‐ RABAH',
-				"GOV’T DAY SEC. SCHOOL (SHIYAR MAGAI 'A'RABAH)",
-				'SHIYAR MAGAJI B RABAH',
-				'KOGOGO HAKIMI',
-				'JICCINI',
-				'G.G.C RABAH',
-				'KOKOGO DUTSE',
-				'SABON GARI RABAH'
+				['SHIYAR MAJIKIRA ‐ A. RABAH',916],
+				['SHIYAR MAJIKIRA ‐ B. RABAH',927],
+				['SHIYAR GALADIMA RABAH',1084],
+				['SHIYAR RAFI ‐ RABAH',1139],
+				["SHIYAR MAGAJI 'A'RABAH",895],
+				['SHIYAR MAGAJI B RABAH',828],
+				['KOGOGO HAKIMI',510],
+				['JICCINI',433],
+				['G.G.C RABAH',526],
+				['KOKOGO DUTSE',559],
+				['SABON GARI RABAH',1264]
 			];
 		}
 	}

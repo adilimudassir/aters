@@ -12,11 +12,11 @@ namespace App\Services\PollingUnit\Gudu;
 
 		public function pollingUnits(){
 			return [
-				'DANFILI, MARAKEN BORI',
-				'DANFILI, MARAKEN FULANI',
-				'DANFILI, JIMA JIMIN SULE',
-				'DANFILI, TAGIMBA',
-				'DANFILI JIMA JIMIN GAYA'
+				['DANFILI, MARAKEN BORI',983],
+				['DANFILI, MARAKEN FULANI',613],
+				['DANFILI, JIMA JIMIN SULE',696],
+				['DANFILI, TAGIMBA',404],
+				['DANFILI JIMA JIMIN GAYA',580]
 			];
 		}
 	}

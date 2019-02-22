@@ -12,12 +12,12 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'SABARRU',
-				'GIDAN FULANI PRIMARY SCHOOL (GIDAN FULANI)',
-				'TURSA',
-				'TUMBULLA',
-				'RAKAKA MAGAJI',
-				'RAKAKA BUZU'
+				['SABARRU',809],
+				['GIDAN FULANI, GIDAN FULANI',432],
+				['TURSA',799],
+				['TUMBULLA',443],
+				['RAKAKA MAGAJI',421],
+				['RAKAKA BUZU',388]
 			];
 		}
 	}

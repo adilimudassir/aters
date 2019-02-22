@@ -14,16 +14,16 @@ class Jaredi
 	protected function pollingUnits()
 	{
 		return [
-			'JAREDI SHIYAR MAJIKIRA ‐ M.P.S',
-			'MAJIKIRA MPS (JAREDI SHIYYAR MAGAJI)',
-			'TSAFARI',
-			'NAKUZU',
-			'GINDIN BISHIYA (RUNJIN BUZU)',
-			'RUGGAR GAMAU',
-			'SIRE',
-			'RUGGAR TUDU',
-			'RUNTUWO',
-			'LUDI'
+			['JAREDI SHIYAR MAJIKIRA ‐ M.P.S',800],
+			['JAREDI SHIYYAR MAGAJI',543],
+			['TSAFARI',513],
+			['NAKUZU',423],
+			['RUNJIN BUZU',323],
+			['RUGGAR GAMAU',593],
+			['SIRE',394],
+			['RUGGAR TUDU',425],
+			['RUNTUWO',293],
+			['LUDI',296]
 		];
 	}
 }

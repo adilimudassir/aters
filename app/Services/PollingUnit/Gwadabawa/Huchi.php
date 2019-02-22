@@ -12,13 +12,13 @@ namespace App\Services\PollingUnit\Gwadabawa;
 
 		public function pollingUnits(){
 			return [
-				'SHIYAR HAKIMI, MARANAWA',
-				'SHIYAR HAKIMI, SABON GARI',
-				'FILIN INJIN, KABAWA',
-				'PRY SCH, KAURA HUCHI',
-				'SHIYAR HAKIMI, JUJIN MAGAJI',
-				'KASUWA, YAURAWA',
-				'PRY SCH, SHIYAR GALADIMA'
+				['SHIYAR HAKIMI, MARANAWA',534],
+				['SHIYAR HAKIMI, SABON GARI',174],
+				['FILIN INJIN, KABAWA',319],
+				['PRY SCH, KAURA HUCHI',340],
+				['SHIYAR HAKIMI, JUJIN MAGAJI',294],
+				['KASUWA, YAURAWA',257],
+				['PRY SCH, SHIYAR GALADIMA',559]
 			];
 		}
 	}

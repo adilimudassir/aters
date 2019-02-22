@@ -12,12 +12,12 @@ namespace App\Services\pollingUnit\Kebbe;
 
 		public function pollingUnits(){
 			return [
-				'GWANDI PRY SCH, GWANDI',
-				'UNGUSHI PRY. SCH. (SHIYAR MAGAJI UNGUSHI)',
-				'UNGUSHI PRY. SCH. (SH UBANDAWAKI UNGUSH)',
-				'UNGUSHI ASIBITI',
-				'PRY SCH MAIKURFUNA',
-				'MAIKURFUNA GIDAN GARSO'
+				['GWANDI PRY SCH, GWANDI',754],
+				['SHIYAR MAGAJI UNGUSHI',635],
+				['SH UBANDAWAKI UNGUSHI',741],
+				['UNGUSHI ASIBITI',1084],
+				['PRY SCH MAIKURFUNA',497],
+				['MAIKURFUNA GIDAN GARSO',728]
 			];
 		}
 	}

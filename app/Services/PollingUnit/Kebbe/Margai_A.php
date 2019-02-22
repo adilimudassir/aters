@@ -12,13 +12,13 @@ namespace App\Services\PollingUnit\Kebbe;
 
 		public function pollingUnits(){
 			return [
-				'DUMKA, D/HILI',
-				'JIGIRI',
-				'GADDACCE, GADACCE PRY SCH',
-				'TUNGAR MINDAUDU D/HILL',
-				'MARGAI SH. SHANTALI, ASIBITI',
-				'MARGAI SH. GALADIMA, SH. GALADIMA',
-				'YARRUDDA, D/HILI'
+				['DUMKA, D/HILI',565],
+				['JIGIRI',499],
+				['GADDACCE, GADACCE PRY SCH',916],
+				['TUNGAR MINDAUDU D/HILL',398],
+				['MARGAI SH. SHANTALI, ASIBITI',1343],
+				['MARGAI SH. GALADIMA, SH. GALADIMA',625],
+				['YARRUDDA, D/HILI',293]
 			];
 		}
 	}

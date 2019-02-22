@@ -12,12 +12,12 @@ namespace App\Services\PollingUnit\Rabah;
 
 		public function pollingUnits(){
 			return [
-				'LUNGUN DUNY PRIMARY SCHOOL (SHIYAR DUNYA)',
-				'SHIYAR ANNA',
-				'SHIYAR CHIDAWAKI',
-				'GIGANI PRIMARY SCHOOL (SHIYAR GIGANE GIDAN HAKIMI)',
-				'SHIYAR DAN ALI PRIMARY SCHOOL (SHIYAR DANALI)',
-				'LUNGUN DUNYA PRIMARY SCHOOL (LUNGUN DUNIYA)'
+				['SHIYAR DUNYA',943],
+				['SHIYAR ANNA',981],
+				['SHIYAR CHIDAWAKI',341],
+				['SHIYAR GIGANE',334],
+				['SHIYAR DAN ALI',329],
+				['LUNGUN DUNYA ',253]
 			];
 		}
 	}

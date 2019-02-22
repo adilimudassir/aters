@@ -12,11 +12,17 @@ namespace App\Services\PollingUnit\Goronyo;
 
 		public function pollingUnits(){
 			return [
-				'PRI. SCH (SHIYAR MAGAJI)',
-				'G/KURMAN JAHADI (BARE TSARA)',
-				'GAMIHAR HURI, GANIHAR HURI',
-				'DARBABIYA DARBABIYA',
-				'MALABA, MALABA'
+				// 'PRI. SCH (SHIYAR MAGAJI)',
+				// 'G/KURMAN JAHADI (BARE TSARA)',
+				// 'GAMIHAR HURI, GANIHAR HURI',
+				// 'DARBABIYA DARBABIYA',
+				// 'MALABA, MALABA'
+
+				['SHIYAR MAGAJI', 1,443],
+				['BARE TSARA',942],
+				['GAMIHAR HURI, GANIHAR HURI', 597],
+				['DARBABIYA DARBABIYA', 572],
+				['MALABA, MALABA', 419]
 			];
 		}
 	}
